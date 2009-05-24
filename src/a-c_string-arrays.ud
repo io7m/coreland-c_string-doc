@@ -1,0 +1,34 @@
+(section
+  (ref "c_string_arrays")
+  (title "C_String.Arrays API Reference")
+  (contents)
+
+  (section
+    (title "Types")
+    (para "The " (item ada_package "C_String.Arrays") " package provides
+      the following types for conversion between C string arrays and Ada string
+      arrays:")
+    (para-verbatim ada_type_synopsis
+"subtype Pointer_Array_t is System.Address;
+
+type String_Array_t is array (Natural range <>) of Ada.Strings.Unbounded.Unbounded_String;")
+    (para "The " (item ada_type "Pointer_Array_t") " type is intended to be used
+      in bindings to C functions. Everywhere a C function specifies "
+      (item c_type "char **") " (an array of character pointers/strings), the "
+      (item ada_type "Pointer_Array_t") " type should be specified.")
+    (para "As an example:")
+    (para-verbatim example
+"/* C version */
+char ** get_names (void);
+
+-- Ada version
+function Get_Names return Pointer_Array_t;
+pragma Import (C, Get_Names, \"get_names\");")
+    (para "The various subprograms in this package can then be used to access
+      data safely."))
+
+  (include "a-c_string-arrays-size_terminated.ud")
+  (include "a-c_string-arrays-index.ud")
+  (include "a-c_string-arrays-index_terminated.ud")
+  (include "a-c_string-arrays-convert.ud")
+)

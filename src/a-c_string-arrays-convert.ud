@@ -1,0 +1,25 @@
+(section
+  (ref "c_string_arrays_convert")
+  (title "C_String.Arrays.Convert")
+  (para function_desc "Convert C array to Ada array.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String.Arrays;
+
+function Convert
+  (Pointer : Pointer_Array_t;
+   Size    : Natural) return String_Array_t;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Convert") " function converts "
+      (item parameter "Pointer") " to an array of unbounded Ada
+      strings. The resulting array will have " (item parameter "Size") " elements.")
+    (para
+      "Care must be taken to ensure that " (item parameter "Pointer") " points
+      to a C array of at least " (item parameter "Size") " elements. The Ada
+      compilation environment has no way of checking the validity of data from
+      external C code.")))
+

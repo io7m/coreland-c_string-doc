@@ -14,3 +14,5 @@
 (contents)
 
 (include "pkg.ud")
+(include "a-c_string.ud")
+(include "a-c_string-arrays.ud")

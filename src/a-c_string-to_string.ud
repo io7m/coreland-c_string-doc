@@ -1,0 +1,24 @@
+(section
+  (ref "c_string_to_string")
+  (title "C_String.To_String")
+  (para function_desc "Convert C string to Ada string.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String;
+
+function To_String
+  (Item : in String_Not_Null_Ptr_t) return String;
+
+function To_String
+  (Item : in Char_Array_Not_Null_Ptr_t;
+   Size : in Interfaces.C.size_t) return String;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "To_String") " functions convert the C string
+      or character array " (item parameter "Item") " to an Ada string and return
+      it. The second form takes a parameter " (item parameter "Size") " which
+      specifies the length of the C string.")))
+

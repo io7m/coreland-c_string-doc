@@ -52,6 +52,7 @@ hr {
 .struct,
 .struct_field,
 .tag_name,
+.type_synopsis,
 .variable
 {
   font-family: monospace;

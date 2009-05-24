@@ -1,0 +1,20 @@
+(section
+  (ref "c_string_to_c_char_array")
+  (title "C_String.To_C_Char_Array")
+  (para function_desc "Convert pointer to unterminated C character array.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String;
+
+function To_C_Char_Array
+  (Item : in not null Interfaces.C.Strings.char_array_access) return Char_Array_Ptr_t;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "To_C_Char_Array") " function performs type
+      conversion from the pointer " (item parameter "Item") " to a "
+      (item ada_type "Char_Array_Ptr_t") " type. This is simple a convenience
+      function - no actual data is processed.")))
+

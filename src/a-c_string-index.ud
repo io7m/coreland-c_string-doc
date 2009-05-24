@@ -1,0 +1,31 @@
+(section
+  (ref "c_string_index")
+  (title "C_String.Index")
+  (para function_desc "Return byte at index for C string.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String;
+
+function Index
+  (Item  : in String_Not_Null_Ptr_t;
+   Index : in Interfaces.C.size_t) return Interfaces.C.char;
+
+function Index
+  (Item  : in Char_Array_Not_Null_Ptr_t;
+   Size  : in Interfaces.C.size_t;
+   Index : in Interfaces.C.size_t) return Interfaces.C.char;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Index") " function returns the character
+      at " (item parameter "Index") " for " (item parameter "Item") ". No
+      more than " (item parameter "Size") " characters are scanned for the
+      second form."))
+  (subsection
+    (title "Exceptions")
+    (para "If " (item parameter "Index") " specifies a value greater than
+      or equal to the length of " (item parameter "Item") ", "
+      (item ada_exception "Constraint_Error") " is raised with an appropriate
+      error message.")))

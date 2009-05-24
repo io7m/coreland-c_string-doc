@@ -1,0 +1,19 @@
+(section
+  (ref "c_string_length")
+  (title "C_String.Length")
+  (para function_desc "Return length of terminated C string.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String;
+
+function Length
+  (Item : in String_Not_Null_Ptr_t) return Interfaces.C.size_t;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Length") " function returns the length
+      of the C string " (item parameter "Item") ". The length of a C
+      string is defined as the position of the first byte with a value
+      of " (item constant "0") ", indexing from " (item constant "0") ".")))

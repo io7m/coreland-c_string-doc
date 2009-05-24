@@ -1,0 +1,19 @@
+(section
+  (ref "c_string_arrays_size_terminated")
+  (title "C_String.Arrays.Size_Terminated")
+  (para function_desc "Return size of terminated C array.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String.Arrays;
+
+function Size_Terminated
+  (Pointer : Pointer_Array_t) return Natural;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Size_Terminated") " function returns the number
+      of elements in the C array referenced by " (item parameter "Pointer") ".")
+    (para
+      "The array is assumed to be null-terminated.")))

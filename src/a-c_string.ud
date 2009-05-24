@@ -1,0 +1,47 @@
+(section
+  (ref "c_string")
+  (title "C_String API Reference")
+  (contents)
+
+  (section
+    (title "Definitions")
+    (para "A C string is defined as an array of bytes.")
+    (para "A C string may be terminated with a byte of value " (item constant "0") ".")
+    (para "The length of a C string may be either " (item variable "N") "+"
+      (item constant "1") ", where " (item variable "N") " is the index of the
+      first byte of value " (item constant "0") " for terminated strings or
+      unspecified for unterminated strings.")
+    (para "The range
+      of valid indices C string of length " (item variable "N") " is "
+      (item constant "0") " .. " (item variable "N") "-" (item constant "1")
+      "."))
+
+  (section
+    (title "Types")
+    (para "The " (item ada_package "C_String") " package provides
+      the following types for conversion between C and Ada strings:")
+    (para-verbatim ada_type_synopsis
+"type String_Ptr_t is access all Interfaces.C.char;
+subtype String_Not_Null_Ptr_t is not null String_Ptr_t;")
+    (para "The " (item ada_type "String_Ptr_t") " type is equivalent
+      to a null-terminated C string/pointer. A null-excluding subtype "
+    (item ada_type "String_Not_Null_Ptr_t") " is also provided.")
+
+    (para-verbatim ada_type_synopsis
+"type Char_Array_Ptr_t is access all Interfaces.C.char;
+subtype Char_Array_Not_Null_Ptr_t is not null Char_Array_Ptr_t;")
+    (para "The " (item ada_type "Char_Array_Ptr_t") " type is equivalent
+      to a non null-terminated C character array/pointer. A null-excluding
+      subtype " (item ada_type "Char_Array_Not_Null_Ptr_t") " is also
+      provided.")
+
+    (para "The above types facilitate the elimination of classes of bugs
+      such as null pointer deferences and buffer overflows when calling C
+      functions that expect null-terminated strings with non-terminated ones."))
+
+  (include "a-c_string-to_string.ud")
+  (include "a-c_string-to_c_string.ud")
+  (include "a-c_string-to_char_array.ud")
+  (include "a-c_string-index.ud")
+  (include "a-c_string-length.ud")
+)

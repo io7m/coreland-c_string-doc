@@ -1,0 +1,23 @@
+(section
+  (ref "c_string_to_c_string")
+  (title "C_String.To_C_String")
+  (para function_desc "Convert pointer to terminated C character array.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String;
+
+function To_C_String
+  (Item : in not null Interfaces.C.Strings.char_array_access) return String_Ptr_t;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "To_C_Char_Array") " function performs type
+      conversion from the pointer " (item parameter "Item") " to a "
+      (item ada_type "String_Ptr_t") " type. This is simple a convenience
+      function - no actual data is processed."))
+  (subsection
+    (title "Exceptions")
+    (para "If " (item parameter "Item") " is not null-terminated, "
+      (item ada_exception "Null_Termination_Error") " is raised.")))

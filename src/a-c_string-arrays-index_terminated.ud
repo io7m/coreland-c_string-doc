@@ -1,0 +1,34 @@
+(section
+  (ref "c_string_arrays_index_terminated")
+  (title "C_String.Arrays.Index_Terminated")
+  (para function_desc "Return contents of terminated C array index.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String.Arrays;
+
+function Index_Terminated
+  (Pointer : Pointer_Array_t;
+   Index   : Natural) return String;
+
+function Index_Terminated
+  (Pointer : Pointer_Array_t;
+   Index   : Natural) return Ada.Strings.Unbounded.Unbounded_String;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Index_Terminated") " functions return the contents
+      of element " (item parameter "Index") " of the C array referenced by "
+      (item parameter "Pointer") ".")
+    (para
+      "The contents of the array element are converted to one of the Ada
+      string types, depending on the function called.")
+    (para
+      "The array is assumed to be null-terminated."))
+  (subsection
+    (title "Exceptions")
+    (para
+      "If " (item parameter "Index") " is greater than or equal to
+      the size of the array, " (item ada_exception "Constraint_Error")
+      " is raised witn a appropriate error message.")))
