@@ -63,6 +63,11 @@ hr {
   font-style: italic;
 }
 
+.supported_header
+{
+  font-weight: bold;
+}
+
 table.options { }
 table.options td { vertical-align: top; padding: 0.5em; }
 
