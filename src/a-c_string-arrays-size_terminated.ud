@@ -8,7 +8,10 @@
 "with C_String.Arrays;
 
 function Size_Terminated
-  (Pointer : Pointer_Array_t) return Natural;
+  (Pointer : in Pointer_Array_t) return Natural;
+
+function Size_Terminated
+  (Pointer : in Allocated_Pointer_Array_t) return Natural;
 "))
   (subsection
     (title "Description")

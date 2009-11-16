@@ -1,0 +1,23 @@
+(section
+  (ref "c_string_arrays_convert_to_c")
+  (title "C_String.Arrays.Convert_To_C")
+  (para function_desc "Convert Ada array to array of C strings.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String.Arrays;
+
+function Convert_To_C
+  (Strings : in String_Array_t) return Allocated_Pointer_Array_t;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Convert_To_C") " function converts "
+      (item parameter "Strings") " to an array of C strings. The resulting
+      C array will have the same number of elements as "
+      (item parameter "Strings") " and the array will not be null-terminated.")
+    (para
+      "The resulting array must be deallocated with "
+      (link "c_string_arrays_deallocate" "Deallocate") " - storage will not
+      be deallocated automatically.")))

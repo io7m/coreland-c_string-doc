@@ -8,14 +8,14 @@
 "with C_String.Arrays;
 
 function Index
-  (Pointer : Pointer_Array_t;
-   Size    : Natural;
-   Index   : Natural) return String;
+  (Pointer : in Pointer_Array_t;
+   Size    : in Natural;
+   Index   : in Natural) return String;
 
 function Index
-  (Pointer : Pointer_Array_t;
-   Size    : Natural;
-   Index   : Natural) return Ada.Strings.Unbounded.Unbounded_String;
+  (Pointer : in Pointer_Array_t;
+   Size    : in Natural;
+   Index   : in Natural) return Ada.Strings.Unbounded.Unbounded_String;
 "))
   (subsection
     (title "Description")

@@ -8,12 +8,12 @@
 "with C_String.Arrays;
 
 function Index_Terminated
-  (Pointer : Pointer_Array_t;
-   Index   : Natural) return String;
+  (Pointer : in Pointer_Array_t;
+   Index   : in Natural) return String;
 
 function Index_Terminated
-  (Pointer : Pointer_Array_t;
-   Index   : Natural) return Ada.Strings.Unbounded.Unbounded_String;
+  (Pointer : in Pointer_Array_t;
+   Index   : in Natural) return Ada.Strings.Unbounded.Unbounded_String;
 "))
   (subsection
     (title "Description")

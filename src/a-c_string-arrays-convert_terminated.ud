@@ -1,0 +1,26 @@
+(section
+  (ref "c_string_arrays_convert_terminated")
+  (title "C_String.Arrays.Convert_Terminated")
+  (para function_desc "Convert null-terminated C array to Ada array.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String.Arrays;
+
+function Convert_Terminated
+  (Pointer : in Pointer_Array_t) return String_Array_t;
+
+function Convert_Terminated
+  (Pointer : in Allocated_Pointer_Array_t) return String_Array_t;
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Convert_Terminated") " functions convert "
+      (item parameter "Pointer") " to an array of unbounded Ada
+      strings.")
+    (para
+      "Care must be taken to ensure that " (item parameter "Pointer") " points
+      to a C array that is terminated with a null pointer. The Ada
+      compilation environment has no way of checking the validity of data from
+      external C code.")))

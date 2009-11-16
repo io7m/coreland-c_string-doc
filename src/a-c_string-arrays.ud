@@ -11,6 +11,8 @@
     (para-verbatim ada_type_synopsis
 "subtype Pointer_Array_t is System.Address;
 
+type Allocated_Pointer_Array_t is new Pointer_Array_t;
+
 type String_Array_t is array (Natural range <>) of Ada.Strings.Unbounded.Unbounded_String;")
     (para "The " (item ada_type "Pointer_Array_t") " type is intended to be used
       in bindings to C functions. Everywhere a C function specifies "
@@ -25,10 +27,24 @@ char ** get_names (void);
 function Get_Names return Pointer_Array_t;
 pragma Import (C, Get_Names, \"get_names\");")
     (para "The various subprograms in this package can then be used to access
-      data safely."))
+      data safely.")
+    (para "The " (item ada_type "Allocated_Pointer_Array_t") " type is returned
+      from the " (link "c_string_arrays_convert_to_c" "Convert") " subprograms.
+      It is identical in structure to the " (item ada_type "Pointer_Array_t")
+      " type but must be explicitly deallocated, once created, by the "
+      (link "c_string_arrays_deallocate" "Deallocate") " subprograms.")
+    (para "The " (item ada_type "Allocated_Pointer_Array_t") " can obviously
+      be passed to C code but must not be used as the return value for
+      bindings (as the example above shows) as the Ada allocator is unlikely
+      to be able to deallocate memory that was allocated by the C allocator."))
 
-  (include "a-c_string-arrays-size_terminated.ud")
+  (include "a-c_string-arrays-convert.ud")
+  (include "a-c_string-arrays-convert_terminated.ud")
+  (include "a-c_string-arrays-convert_to_c.ud")
+  (include "a-c_string-arrays-convert_to_c_terminated.ud")
+  (include "a-c_string-arrays-deallocate.ud")
+  (include "a-c_string-arrays-deallocate_terminated.ud")
   (include "a-c_string-arrays-index.ud")
   (include "a-c_string-arrays-index_terminated.ud")
-  (include "a-c_string-arrays-convert.ud")
+  (include "a-c_string-arrays-size_terminated.ud")
 )

@@ -1,0 +1,23 @@
+(section
+  (ref "c_string_arrays_deallocate_terminated")
+  (title "C_String.Arrays.Deallocate_Terminated")
+  (para function_desc "Deallocate null-terminated C array.")
+  (subsection
+    (title "Synopsis")
+    (para-verbatim function_synopsis
+"with C_String.Arrays;
+
+procedure Deallocate_Terminated
+  (Pointer : in Allocated_Pointer_Array_t;
+   Size    : in Natural);
+"))
+  (subsection
+    (title "Description")
+    (para
+      "The " (item ada_function "Deallocate_Terminated") " procedure deallocates
+      each element of " (item parameter "Pointer") " and then deallocates the
+      array itself.")
+    (para
+      "Care must be taken to ensure that " (item parameter "Pointer") " points
+      to a null-terminated C array of strings. The Ada compilation environment
+      has no way of checking the validity of data from external C code.")))
